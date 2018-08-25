@@ -70,6 +70,7 @@ gem 'twitter-bootstrap-rails'
 gem 'cancancan'
 group :development do
   gem 'better_errors'
+  gem 'railroady'
 end
 group :test do
   gem 'simplecov', :require => false
