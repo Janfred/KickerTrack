@@ -1,3 +1,6 @@
+# Player in the tournament.
+# Not to be confused with {User}
+# Players can be in different {Team}s
 class Player < ApplicationRecord
   belongs_to :user
   has_and_belongs_to_many :teams

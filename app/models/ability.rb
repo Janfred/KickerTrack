@@ -3,6 +3,7 @@ class Ability
   include CanCan::Ability
 
   # Initialize all abilities
+  # @param user the user to generate the abilities for
   def initialize(user)
     # Define abilities for the passed in user here. For example:
     #
