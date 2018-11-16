@@ -68,6 +68,7 @@ gem 'devise-i18n'
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'cancancan'
+gem 'yard'
 group :development do
   gem 'better_errors'
   gem 'railroady'
