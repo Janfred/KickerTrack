@@ -1,4 +1,5 @@
 # Swiss System calculator
+#
 # For every new round a new instance of this calculator must be initialized
 class SwissSystem
 
@@ -8,12 +9,12 @@ class SwissSystem
   @sort_function = nil
   @teams_by_id = {}
 
-  # Initializes the swiss system with the given teams, existing rounds and indicating functions
+  # Initializes the swiss system with the given teams, existing rounds and indicating functions.
   # @param teams an array containing all teams as map in the form {team_id: [Integer], freeplay_lock: [Boolean], freeplay_team: [Boolean], data: [Map]} with the data map containing all necessary information for the ordering function. The boolean `freeplay_lock` indicates, wether the team is not to be scheduled against the "Freeplay"-Team e.g. because they won a game because the opponent didn't show up. Must be an even count.
   # @param paarings An array of all played paarings in the form {team_1: [Integer], team_2: [Integer]}
   # @param pointgroup_identifier function for getting the pointgroup identifier
   # @param sort_function function for sorting the teams
-  # @throws SwissSystemInitializeException if the team count is not even
+  # @raise [SwissSystemInitializeException] if the team count is not even
   def initialize(teams, paarings, pointgroup_identifier, sort_function)
     raise SwissSystemInitializeException.new, "Team count is not even" if teams.length % 2 != 0
     @teams = teams
@@ -33,7 +34,7 @@ class SwissSystem
   end
 
   # Calculates a basic paaring as fallback
-  # @throws SwissSystemPaaringException if no paaring is possible
+  # @raise [SwissSystemPaaringException] if no paaring is possible
   def basic_paaring
     paarings = basic_paaring_recursive(@teams_by_id.keys, [])
   end
@@ -41,7 +42,8 @@ class SwissSystem
   private
 
   # Helper function for {basic_paaring}
-  # calculates the next possible paaring for the given team_ids
+  #
+  # Calculates the next possible paaring for the given team_ids
   # @param team_ids [Array] of team ids still to pair
   # @param current_paarings [Array] of Arrays with paarings
   def basic_paaring_recursive(team_ids, current_paarings)
@@ -61,10 +63,12 @@ class SwissSystem
   end
 end
 # Exception for handling errors during initialization
+#
 # usually thrown if the data format doesn't match the requested format
 class SwissSystemInitializeException < RuntimeError
 end
 # Exception during paarings.
+#
 # Thrown, when no paaring is possible under the given preconditions
 class SwissSystemPaaringException < RuntimeError
 end
