@@ -265,7 +265,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.1)
+    sqlite3 (1.4.2)
     sys-uname (1.2.1)
       ffi (>= 1.0.0)
     temple (0.8.0)
