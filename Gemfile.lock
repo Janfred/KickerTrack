@@ -116,7 +116,7 @@ GEM
       cucumber-core (~> 7.0, >= 7.0.0)
       cucumber-cucumber-expressions (~> 10.1, >= 10.1.0)
       cucumber-messages (~> 12.1, >= 12.1.1)
-    database_cleaner (1.7.0)
+    database_cleaner (1.8.5)
     devise (4.7.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
